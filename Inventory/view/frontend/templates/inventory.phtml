@@ -1,0 +1,20 @@
+<?php
+/* @var \Wheelpros\Inventory\Block\Inventory $block */ ?>
+<div class="inventory-qty">
+    <?php
+    $inventorydata = $block->getCurrentProductInventory();
+    ?>
+
+    <table border = "1">
+        <tr>
+            <th>Quantity</th>
+            <th>Description</th>
+        </tr>
+        <?php foreach($inventorydata as $data): ?>
+            <tr>
+                <td><?=  $data['quantity']; ?></td>
+                <td><?=  $data['description']; ?></td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+</div>
